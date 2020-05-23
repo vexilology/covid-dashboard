@@ -84,7 +84,7 @@ def fetch_john_hopkins_data():
     ]
     df_countries[float_column] = df_countries[float_column].astype(float)
     df_countries = pd.concat(
-        [df_countries, MISSING_COUNTRIES], ignore_index=True
+        [df_countries, MISSING_COUNTRIES], ignore_index=True, sort=False
     )
 
     df = pd.merge(

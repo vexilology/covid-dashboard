@@ -254,7 +254,7 @@ errors_by_window = dict()
 for start in range(8, 14):
     for middle in range(2, start + 1):
         window = ramp_window(start, middle)
-        window_name = f'Ramp, from -{start} to -{middle}'
+        window_name = 'Ramp, from -{} to -{}'.format(start, middle)
         errors = mem.cache(historical_replay)(confirmed, window)
         errors_by_window[window_name] = (errors, start, middle)
 
@@ -296,7 +296,7 @@ errors_by_window = dict()
 for start in range(12, 18):
     for growth in [1.4, 1.5, 1.6, 1.7, 1.8, 1.9]:
         window = exp_window(start, growth)
-        window_name = f'Exp, from -{start} with growth {growth}'
+        window_name = 'Exp, from -{} with growth {}'.format(start, growth)
         errors = mem.cache(historical_replay)(confirmed, window)
         errors_by_window[window_name] = (errors, start, growth)
 

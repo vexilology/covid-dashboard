@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Dash app entry point
 
@@ -13,15 +14,15 @@ import numpy as np
 import dash
 from dash.dependencies import Input, Output, State, ClientsideFunction
 import dash_table
-import dash_html_components as html
 import dash_core_components as dcc
+import dash_html_components as html
 
-from make_figures import make_map, make_timeplot, FIRST_LINE_HEIGHT
 from data_input import tidy_most_recent, get_all_data
+from make_figures import make_map, make_timeplot, FIRST_LINE_HEIGHT
 
 if 'DEBUG' in os.environ:
     debug = os.environ['DEBUG'] == 'True'
-    print(f"DEBUG environment variable present, DEBUG set to {debug}")
+    print("DEBUG environment variable present, DEBUG set to {}".format(debug))
 else:
     print("No DEBUG environment variable: defaulting to debug mode")
     debug = True
